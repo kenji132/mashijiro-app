@@ -1,0 +1,18 @@
+<div class="container">
+
+    <div class="row">
+        
+        <div class="col-xs-1">
+        </div>
+        <div class="post_index">
+            <div class="success">
+                <%= flash[:success] %>
+            </div>
+            <%= render partial: 'layouts/index', locals: { posts: @posts } %>
+            <%= paginate @posts %>
+        </div>
+        <div class="col-xs-1">
+        </div>
+
+    </div>
+</div>

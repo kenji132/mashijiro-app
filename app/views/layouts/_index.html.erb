@@ -1,0 +1,24 @@
+<div class="index_box">
+    <% posts.each do |f| %>
+        <div class="post_box">
+            <div class="post_image">
+                <%= link_to image_tag(show_post_post_path(f.id), :width => 500,:height => 600) %>
+            </div>
+            <div class="post_review">
+                <p>店名</p>
+                <span class="post_name"><strong><%= f.store_name %></strong></span>
+                <p>商品名</p>
+                <span class="post_name"><strong><%= f.name %></strong></span>
+                <p>レビュー</p>
+                <div class="review">
+                    <%=safe_join(f.review.split("\n"), tag(:br))%>
+                </div>
+                <%= link_to '詳細', post_path(f.id), class: "btn btn-success" %>
+                <p>総マシマシ度</p>
+                <h2><%= f.point %></h2>
+                <p>投稿日</p>
+                <%= l f.created_at , format: :short %>
+            </div>
+        </div>
+    <% end %>
+</div>

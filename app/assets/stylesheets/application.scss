@@ -1,0 +1,260 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ 
+@import "bootstrap";
+head{
+    margin-top: 30px;
+}
+.navber-left{
+    color :black;
+    font-size: 30px;
+}
+.item{
+    background-color: white;
+    margin: 5px;
+    text-align: center;
+}
+.navbar{
+    margin-bottom: 0px;
+    background-color: #FCDA20;
+}
+.select{
+    margin-left: auto;
+    margin-right: auto;
+}
+.success {
+    position: absolute;
+
+    color: #42a952;
+
+    animation: fadeout 1s linear 3s 1;
+    animation-fill-mode: forwards;
+    -webkit-animation: fadeout 1s linear 3s 1;
+    -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes fadeout {
+    0%   {  opacity:1;height:0;margin:0;padding:0;margin-bottom:0;    }
+    99%  {  opacity:0;height:0;margin:0;padding:0;margin-bottom:0;    }
+    100% {  opacity:0;height:0;margin:0;padding:0;  }
+}
+@-webkit-keyframes fadeout {
+    0%   {  opacity:1;height:60px;margin:0 ;padding:0;margin-bottom:0;    }
+    99%  {  opacity:0;height:60px;margin:0;padding:0;margin-bottom:0;    }
+    100% {  opacity:0;height:0;margin:0;padding:0;  }
+}
+
+.top{
+    margin: 0px;
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.post_name{
+    font-size: 30px;
+}
+body{
+    background-color:rgba(189, 186, 184, 0.871);
+}
+//トップページ
+.top1{
+    background-image: url("128436D3-D6AD-49BB-B3C2-3C56E0CB0C5E_1_105_c.jpeg"); 
+    background-size: cover;
+    background-position: center ;
+    margin-top: 60px;
+    padding: 18vmin 20vmin;
+    width: 100%;
+    height: 600px;
+}
+
+.top2{
+    background-image: url("7DA49C04-8EE1-46E2-990F-143025D9D19E_1_105_c.jpeg");
+    background-size: cover;
+    background-position: center bottom;
+    padding: 16vmin 20vmin;
+    width: 100%;
+    height: 600px;
+}
+.top3{
+    background-image: url("33C3843E-170D-4D5A-84B4-5110E6813F37_1_105_c.jpeg"); 
+    background-size: cover;
+    background-position: center ;
+    padding: 16vmin 20vmin;
+    width: 100%;
+    height: 600px;
+}
+.touroku{
+    text-align: center;
+}
+.top-message{
+    height: 500px;
+    padding: 16vmin 20vmin;
+}
+footer{
+    background-color:black;
+    height: 400px;
+    text-align: center;
+    padding: 6vmin 20vmin;
+}
+h5{
+    color: white;
+
+}
+
+//会員登録
+.user_sign_up{
+    margin-top:100px;
+    margin-bottom:100px;
+    text-align: center;
+
+}
+//ログイン
+.user_login{
+    margin-top:100px;
+    margin-bottom:100px;
+    text-align: center;
+}
+
+
+//投稿一覧
+.index_box{
+    float: left;
+    width: 100%;
+}
+input[type="file"] {
+    display: inline; 
+}
+.post_box{
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    padding: 10px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1024px;
+    clear: both;
+    height: auto;
+    overflow: hidden; 
+    position: relative; 
+    zoom:1;
+    display: block;
+}
+.post_image{
+    margin: 0px auto;
+    display: block;
+    float: left;
+}
+.post_review{
+    font-family: 'Roboto', sans-serif;
+    float: left;
+    display: block;
+    margin:20px;
+    overflow: scroll;
+}
+.review{
+    overflow: scroll;
+    word-break: break-all;
+    height: 250px;
+    border: 1px solid;
+    width: 400px;
+}
+
+//投稿画面
+.post_form{
+    background-color:white;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    padding: 8vmin 10vmin;
+    text-align: center;
+}
+
+textarea {
+    resize: none;
+    width:300px;
+    height:200px;
+    
+  }
+
+.col-xs-10{
+    padding: 10px;
+    border-radius: 30px;
+    margin: 10px;
+}
+
+//ユーザー詳細
+.profile_box{
+    background-color: white;
+    margin-top: 100px;
+    padding:20px 30px;
+    height:auto;
+    text-align: center;
+}
+.introduction{
+    overflow: scroll;
+    word-break: break-all;
+    width:100%;
+    height: 150px;
+    border: 1px solid;
+    width: 400px;
+    margin: 0 auto;
+}
+.profile_contents{
+    display: block;
+    margin-right: 0px;
+}
+
+.clearfix{
+    background-color:rgba(189, 186, 184, 0.871);
+}
+.jirorian{
+    text-align: center;
+    color: white;
+    background-color: rgb(177, 84, 9);
+    width: 100%;
+    height: 50px;
+    font-size: 30px;
+}
+.nothing{
+    height: 500px;
+    width: 100%;
+    text-align: center;
+    padding: 8vmin 10vmin;
+}
+a.profile_image{
+    border-radius: 50%;
+}
+
+
+h3{
+    margin-top: 0px;
+}
+//フォーム関連
+.attention{
+    color:blue;
+}
+
+.error{
+    color:red;
+}
+//投稿一覧
+
+@media screen and (max-width:768px){
+    .post_review{
+        margin: 20px 0px;
+    }
+}

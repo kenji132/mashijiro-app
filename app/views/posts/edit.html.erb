@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-1">
+        </div>
+        <div class="post_form" >
+            <h1>編集</h1>
+            <div class="error">
+                <%= flash[:error] %>
+            </div>
+            <%= form_for (@post) do |f| %>
+                <div class="post_contents">
+                    <h4>写真</h4>
+                    <p class="attention">写真を変更しない場合は”選択されていません”と表示されていても大丈夫です</p>
+                    <%= f.file_field :picture %>
+                    <h4>店名</h4>
+                    <%= f.text_field :store_name %>
+                    <h4>商品名</h4>
+                    <%= f.text_field :name %>
+                    <div class="select_box">
+                        <table class="table">
+                            <tr>
+                                <th>ヤサイ</th>
+                                <th>ニンニク</th>
+                                <th>麺</th>
+                                <th>ブタ</th>
+                                <th>アブラ</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <%= f.select :vegetable, [["ナシ", "0"], ["少なめ", "1"], ["普通", "2"], ["マシ", "3"], ["マシマシ", "4"], ["マシマシ以上", "5"]], include_blank: "選択して下さい" %>
+                                </td>
+                                <td>
+                                    <%= f.select :garlic,[["ナシ", "0"], ["普通", "1"], ["マシ", "2"], ["マシマシ", "3"]], include_blank: "選択して下さい" %>
+                                </td>
+                                <td>
+                                    <%= f.select :noodle, [["少なめ", "1"], ["普通", "3"], ["大盛り", "5"]], include_blank: "選択して下さい" %>
+                                </td>
+                                <td>
+                                    <%= f.select :pig, [["ナシ", "0"], ["普通", "3"], ["ブタマシ", "５"]], include_blank: "選択して下さい" %>
+                                </td>
+                                <td>
+                                    <%= f.select :backfat, [["ナシ", "0"], ["普通", "1"], ["マシ", "2"], ["マシマシ", "3"]], include_blank: "選択して下さい" %> 
+                                </td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+                    <h4>感想</h4>
+                    <%= f.text_area :review %>
+                </div>
+                <%= f.submit '保存', :size => "200×150", class: "btn btn-primary"%>
+                </p>
+            <% end %>
+        </div>
+        <div class="col-xs-1">
+        </div>
+    </div>
+</div>

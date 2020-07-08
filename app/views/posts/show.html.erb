@@ -1,0 +1,99 @@
+
+<div class="post_box">
+    <div class="success">
+        <%= flash[:success] %>
+    </div>
+    <div class="post_image">
+        <%= link_to image_tag(show_post_post_path(@post.id), :width => 400,:height => 500) %>
+    </div>
+
+    <div class="post_review">
+        <p>店名</p>
+        <span class="post_name"><strong><%= @post.store_name %></strong></span>
+        <p>商品名</p>
+        <span class="post_name"><strong><%= @post.name %></strong></span>
+        
+        <table class="table">
+        <tr>
+            <th>総マシマシ度</th>
+            <th>ヤサイ</th>
+            <th>ニンニク</th>
+            <th>ブタ</th>
+            <th>麺</th>
+            <th>アブラ</th>
+        </tr>
+        <tr>
+            <td><%= @post.point %></td>
+            <td>
+                <%if @post.vegetable == 0%>
+                ナシ
+                <% elsif @post.vegetable == 1%>
+                少なめ
+                <% elsif @post.vegetable == 2%>
+                普通
+                <% elsif @post.vegetable == 3%>
+                マシ
+                <% elsif @post.vegetable == 4%>
+                マシマシ
+                <% else %>
+                マシマシ以上
+                <% end %>
+            </td>
+            <td>
+                <%if @post.garlic == 0%>
+                ナシ
+                <% elsif @post.garlic == 1%>
+                普通
+                <% elsif @post.garlic == 2%>
+                マシ
+                <% elsif @post.garlic == 3%>
+                マシマシ
+                <% else %>
+                マシマシ
+                <% end %>
+            </td>
+            <td>
+                <%if @post.pig == 1%>
+                ナシ
+                <% elsif @post.pig == 3%>
+                普通
+                <% else %>
+                ブタマシ
+                <% end %>
+            </td>
+            <td>
+                <%if @post.noodle == 1%>
+                少なめ
+                <% elsif @post.noodle == 3%>
+                普通
+                <% else %>
+                大盛り
+                <% end %>
+            </td>
+            <td>
+                <%if @post.backfat == 0%>
+                ナシ
+                <% elsif @post.backfat == 1%>
+                普通
+                <% elsif @post.backfat == 2%>
+                マシ
+                <% elsif @post.backfat == 3%>
+                マシマシ
+                <% else %>
+                マシマシ
+                <% end %>
+            </td>
+        </tr>
+        </table>
+        <p>レビュー</p>
+        <div class="review">
+            <%=safe_join(@post.review.split("\n"), tag(:br))%>
+        </div>
+
+        <%= l @post.created_at , format: :short %>
+        <% if @post.user_id == current_user.id %>
+        <%= link_to "削除", post_path(@post.id), method: :delete,class: "btn btn-danger"%>
+        <%= link_to "編集", edit_post_path(@post.id), class: "btn btn-success"%>
+        <% end %>
+    </div>
+</div>

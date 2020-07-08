@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+
+    <div class=" profile_box">
+        <div class="profile_contents">
+            <h3>プロフィール</h3>
+            <%= link_to image_tag(show_user_image_user_path(@user.id), :width => 50,:height => 50) ,class: "profile_image"%>
+            <p><i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>ユーザー名：<%= @user.name %></p>
+            <% if @user.posts.count !=0 %>
+                <p><i class="fas fa-book-open" aria-hidden="true"></i>レビュー数：<%= @user.posts.count %></p>
+                <p>平均マシマシ度：<%= @av_point %></p>
+            <% else %>
+                <p><i class="fas fa-book-open" aria-hidden="true"></i>レビュー数：0</p>
+                <p>平均マシマシ度：0</p>
+            <% end %>
+        </div>
+        <div class="introduction-section">
+            <p>自己紹介</p>
+            <% if @user.introduction.nil? %>
+            <% else %>
+                <div class="introduction">
+                    <%=safe_join(@user.introduction.split("\n"), tag(:br))%>
+                </div>
+            <% end %>
+            <%= link_to '編集する', edit_user_path(@user.id), class: "btn btn-success" %>
+        </div>
+    </div>
+
+
+
+        <div class="clearfix ">
+            <div class="jirorian">
+                <%= @user.name %>のジロリアンライフ
+            </div>
+            <% if @user.posts.count != 0 %>
+                <%= render partial: 'layouts/index', locals: { posts: @posts } %>
+                <%= paginate @posts %>
+            <% else %>
+                <div class="nothing">
+                    <h2>投稿はありません</h2>
+                    <%= link_to '今すぐ投稿しよう！', new_post_path %>
+                </div>
+            <% end %>
+        </div>
+
+
+
+    </div>
+</div>
